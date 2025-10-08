@@ -13,6 +13,11 @@
     <header>
       <nav class="navegacao">
         <a href="#" class="logo">Sabor di Casa</a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+          ☰
+        </button>
+
         <ul class="menu">
           <li><a href="#sobre-nos">Sobre Nós</a></li>
           <li><a href="#pratos-em-destaque">Pratos em Destaque</a></li>
@@ -73,7 +78,7 @@
           <div class="galeria-pratos">
             <div class="prato">
               <img
-                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                src="https://www.delicitte.com.br/wp-content/uploads/sites/2049/2019/10/cardapio-premium-massa-artesanal-Rondele.jpg"
                 alt="Massa Artesanal"
               />
               <h3>Massa Artesanal</h3>
@@ -84,7 +89,7 @@
             </div>
             <div class="prato">
               <img
-                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                src="https://th.bing.com/th/id/R.622a006de86afb4ec5bfd20cd79fd226?rik=%2b%2fA5Q2ELxiWFBw&riu=http%3a%2f%2fcamilanacozinha.com%2fwp-content%2fuploads%2f2012%2f09%2frisoto-de-camarao-alho-poro-e-laranja.jpg&ehk=srM%2f3e4JVmcHCGBv0QFvIBSDlcJqgr9RTUPyUq0WSZ8%3d&risl=&pid=ImgRaw&r=0"
                 alt="Risoto de Camarão"
               />
               <h3>Risoto de Camarão</h3>
@@ -95,7 +100,7 @@
             </div>
             <div class="prato">
               <img
-                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                src="https://www.minervafoods.com/wp-content/uploads/2020/05/juicy_steak_medium_rare_beef_with_spices_and_grilled_vegetables.jpg"
                 alt="Filé com Legumes"
               />
               <h3>Filé com Legumes</h3>
@@ -106,7 +111,7 @@
             </div>
             <div class="prato">
               <img
-                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                src="https://www.guiadasemana.com.br/contentFiles/system/pictures/2013/3/70646/cropped/brownie-beth-daniel-pera.jpg"
                 alt="Sobremesa de Chocolate"
               />
               <h3>Sobremesa de Chocolate</h3>
@@ -171,7 +176,7 @@
               </p>
               <div class="cliente">
                 <img
-                  src="https://images.unsplash.com/photo-1603415526960-f7e0328b8d3c?auto=format&fit=crop&w=100&q=80"
+                  src="https://th.bing.com/th/id/OIP.m9MRr2-FG3a3bOUZe9huFQHaE7?w=284&h=189&c=7&r=0&o=7&cb=12&pid=1.7&rm=3"
                   alt="Cliente 3"
                 />
                 <div>
@@ -258,10 +263,21 @@
       </div>
     </section>
 
-      <!-- Footer -->
+    <!-- Footer -->
     <footer>
       <p>&copy; 2024 Sabor di Casa. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.querySelector(".menu");
+
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        toggle.textContent = menu.classList.contains("open") ? "✕" : "☰";
+      });
+    </script>
 
     <script type="module">
       import {
@@ -378,10 +394,17 @@
     <!-- footer -->
 
     <script type="module">
-      import { splitText, animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+      import {
+        splitText,
+        animate,
+        stagger,
+      } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
 
-     animate(".footer p", { opacity: [0, 1], y: [20, 0] }, { delay: stagger(0.05), duration: 0.5, easing: "easeOut" });
-
+      animate(
+        ".footer p",
+        { opacity: [0, 1], y: [20, 0] },
+        { delay: stagger(0.05), duration: 0.5, easing: "easeOut" }
+      );
     </script>
 
     <script>
@@ -409,6 +432,5 @@
           document.getElementById("formReserva").reset();
         });
     </script>
-
   </body>
 </html>

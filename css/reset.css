@@ -5,6 +5,8 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f7f3ee;
-  color: #1a1a1a;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #1a1a1a;
 }
