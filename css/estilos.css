@@ -9,6 +9,15 @@ header {
   z-index: 100;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #d4af37;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 
 /* ======= NAVEGAÇÃO ======= */
 .navegacao {
@@ -77,11 +86,6 @@ section {
 body {
   overflow-x: hidden;
   overflow-y: scroll;
-}
-
-.example {
-  display: flex;
-  flex-direction: column;
 }
 
 .scroll-section:nth-child(2) {
@@ -231,33 +235,30 @@ body {
 }
 
 /* ======= PRATOS DESTAQUE ======= */
+/* ======= PRATOS DESTAQUE ======= */
 .pratos-destaque {
-  background-color: #1a1a1a;
-  color: #f7f3ee;
+  background-color: #eed9c0 !important;
+  color: #1a1a1a;
   text-align: center;
-  padding: 5rem 2rem;
-    background-color: #eed9c0 !important;
+  padding: 1rem 2rem;
 }
 
 .pratos-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  background-color: #eed9c0 !important;
   margin-top: 150px;
-  
 }
 
 .pratos-destaque h2 {
   font-family: "Playfair Display", serif;
   font-size: 4.5rem;
   color: #d4af37;
-  margin-bottom: 1rem;
-  position: relative;
-  text-align: center;
   margin-bottom: 1.5rem;
+  position: relative;
   font-weight: 700;
 }
+
 .pratos-destaque h2::after {
   content: "";
   display: block;
@@ -273,17 +274,17 @@ body {
   margin-bottom: 3rem;
   max-width: 700px;
   margin-inline: auto;
-  color: #ddd;
   line-height: 1.6;
   color: #555;
   text-align: justify;
 }
 
+/* === GALERIA DE PRATOS (AGORA EM GRID) === */
 .galeria-pratos {
-  display: flex;
-  justify-content: center;
+  display: grid;
   gap: 2rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin-top: 2rem;
   background-color: #eed9c0 !important;
   padding: 2rem;
@@ -294,8 +295,7 @@ body {
   background-color: #222;
   padding: 1rem;
   border-radius: 12px;
-  width: 250px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease;
   overflow: hidden;
   position: relative;
@@ -309,9 +309,15 @@ body {
 
 /* Animação base */
 @keyframes girarPrato {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(10deg) scale(1.05); }
-  100% { transform: rotate(0deg) scale(1); }
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 .prato:hover img {
@@ -324,38 +330,36 @@ body {
   font-size: 1.2rem;
   color: #d4af37;
 }
+
 .prato .descricao {
   font-size: 0.9rem;
   margin-top: 0.5rem;
   color: #ddd;
   text-align: justify;
-  overflow: hidden; 
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* avaliações */
+/* ======= AVALIAÇÕES ======= */
 .avaliacoes {
-    background-color: #eed9c0 !important;
+  background-color: #eed9c0 !important;
   color: #1a1a1a;
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
 }
 
 .avaliacoes-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  
 }
 
 .avaliacoes h2 {
   font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #d4af37;
-  margin-bottom: 1rem;
-  position: relative;
-  text-align: center;
   margin-bottom: 1.5rem;
+  position: relative;
   font-weight: 700;
 }
 
@@ -368,11 +372,12 @@ body {
   margin-inline: auto;
 }
 
+/* === CARDS DE AVALIAÇÃO (AGORA EM GRID) === */
 .cards-avaliacoes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2rem;
 }
 
@@ -381,8 +386,7 @@ body {
   color: #333;
   padding: 2rem;
   border-radius: 12px;
-  width: 320px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -393,13 +397,13 @@ body {
 
 .card-avaliacao:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
 }
 
 .texto {
   font-style: italic;
   line-height: 1.5;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
   color: #555;
 }
@@ -408,10 +412,8 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
-  justify-content: center;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
 }
 
 .cliente img {
@@ -420,20 +422,20 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #d4af37;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .estrelas {
   color: #d4af37;
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   display: flex;
-  gap: 0.1rem;
   justify-content: center;
   align-items: center;
+  gap: 0.2rem;
 }
 
-/* reservas */
+/* ======= RESERVAS ======= */
 .reserva {
   background: linear-gradient(135deg, #1b1b1b, #292929);
   color: #fff;
@@ -459,12 +461,18 @@ body {
   margin-bottom: 3rem;
 }
 
+/* === FORMULÁRIO (AGORA EM GRID) === */
 /* Formulário de reserva */
 .form-reserva {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1.5rem;
   text-align: left;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .form-group {
@@ -496,17 +504,6 @@ body {
   outline: none;
 }
 
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.form-row .form-group {
-  flex: 1;
-  min-width: 150px;
-}
-
 .btn-reserva {
   background: #d4af37;
   color: #1b1b1b;
@@ -530,6 +527,8 @@ footer {
   background-color: #1a1a1a;
   color: #f7f3ee;
   text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
   font-size: 0.9rem;
   padding: 1.5rem 2rem;
   margin-top: 2rem;
@@ -544,8 +543,15 @@ footer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 footer p {
-  margin: 0;
-  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
   color: #ccc;
-  letter-spacing: 0.5px;
+}
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #f7f3ee;
 }
