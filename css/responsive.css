@@ -30,6 +30,7 @@
   }
   .logo {
     font-size: 1.6rem;
+    }
   .container {
     padding: 0 2rem;
   }
@@ -146,7 +147,7 @@
     font-size: 1.2rem;
     margin-bottom: 2rem;
     padding: 0 1rem;
-
+  }
   .section-cards {
     flex-direction: column;
     align-items: center;
@@ -234,7 +235,7 @@
 @media screen and (max-width: 480px) {
   .menu-toggle {
     display: block;
-  }
+    }
 
   .menu {
     position: absolute;
@@ -280,6 +281,7 @@
   }
   .estrelas span {
     font-size: 1.2rem;
+    }
 @media (max-width: 540px) {
   .hero img {
     width: 100%;
