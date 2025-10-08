@@ -9,4 +9,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #1a1a1a;
+  background: linear-gradient(135deg, #1b1b1b, #292929);
+  color: #1a1a1a;
 }
